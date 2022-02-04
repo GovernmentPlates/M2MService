@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ec318da9-b9ca-422c-8ec0-de01ebedb042" name="p3t@local" url="http://localhost/M2MApp">
+        <fileTransfer mountedRoot="C:\Users\dom\Desktop\xampp\htdocs" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>

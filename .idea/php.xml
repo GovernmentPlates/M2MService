@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/fig/http-message-util" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/slim/slim" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/slim/psr7" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/nikic/fast-route" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/composer" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/slim/twig-view" />
+      <path value="$PROJECT_DIR$/phpappfolder/includes/vendor/monolog/monolog" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/phpappfolder/includes/vendor/autoload.php" />
+    </phpunit_settings>
+  </component>
+</project>

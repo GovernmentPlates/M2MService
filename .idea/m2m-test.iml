@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/phpappfolder/includes/app/src" isTestSource="false" packagePrefix="SMS\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/symfony/polyfill-php72" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/fig/http-message-util" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/slim/slim" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/slim/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/doctrine/persistence" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/pimple/pimple" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/nikic/fast-route" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/slim/twig-view" />
+      <excludeFolder url="file://$MODULE_DIR$/phpappfolder/includes/vendor/monolog/monolog" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
