@@ -1,0 +1,24 @@
+.jumbotron-home {
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  background-image: linear-gradient(0deg, #e9ecef 0%, #f8f9fa 100%);
+}
+
+.jumbotron {
+  padding: 2rem 2rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  background-image: linear-gradient(0deg, #e9ecef 0%, #f8f9fa 100%);
+  margin-bottom: 1em;
+}
+
+.jumbotron-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  @include border-radius(0);
+}
+
+.jumbotron-stats {
+  padding: 1.25rem 1rem !important;
+}

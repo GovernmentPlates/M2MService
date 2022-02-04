@@ -1,0 +1,50 @@
+{
+  "name": "dmu-21-3110-as/m2m-service",
+  "description": "group-coursework",
+  "license": "AFL-3.0",
+  "authors": [
+    {
+      "name": "Dominic Hollis",
+      "email": "pXXXXXXX@my365.dmu.ac.uk",
+      "role": "Agile Lead, Documentation, Developer"
+    },
+    {
+      "name": "Artem Bobrov",
+      "email": "pXXXXXXX@my365.dmu.ac.uk",
+      "role": "QA Tester, Developer"
+    },
+    {
+      "name": "Alex Grosvenor",
+      "email": "pXXXXXXX@my365.dmu.ac.uk",
+      "role": "DB Admin, Developer"
+    }
+  ],
+  "require": {
+    "slim/slim": "^3.12",
+    "slim/psr7": "^1.1",
+    "slim/twig-view": "^2.4",
+    "monolog/monolog": "^2",
+    "doctrine/orm": "^2.6",
+    "ext-sodium": "*",
+    "ext-pdo": "*",
+    "ext-simplexml": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "9"
+  },
+  "autoload": {
+    "psr-4": {
+      "SMS\\": "app/src",
+      "DB\\": "app/src",
+      "Validator\\": "app/src",
+      "User\\": "app/src",
+      "Session\\": "app/src",
+      "TwoFactorAuth\\": "app/src"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/package-versions-deprecated": false
+    }
+  }
+}

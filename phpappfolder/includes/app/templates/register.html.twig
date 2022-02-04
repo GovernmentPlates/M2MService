@@ -1,0 +1,67 @@
+{% extends 'login-base.html.twig' %}
+
+{% block main %}
+    <body>
+    <div id="loader" class="loader-center"></div>
+    <div class="modal fade" id="bigScaryLegalWarning" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Warning: Authorized Users Only</h5>
+                </div>
+                <div class="modal-body text-justify">
+                    <p>You have accessed an online service that belongs to De Montfort University ("DMU"). You are required to have authorization from DMU before accessing this service, and are strictly limited to the use as set out within that authorization. Unauthorized access or misuse of this service is prohibited and constitutes a criminal offence under the Computer Misuse Act 1990 - we will also dispatch a T-800&trade; unit to your location.</p>
+                    <p>Your current I.P address (<i>{{ visitor_ip }}</i>), browser/device information and date/time of your access to this service is being monitored.</p>
+                </div>
+                <div class="modal-footer">
+                    <p><b>Are you authorized to use this service?</b></p>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="setCookie('legalWarningDismissed', 'Y', 30)">Yes</button>
+                    <a href="https://dmu.ac.uk/"><button type="button" class="btn btn-danger">No</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container py-4">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center me-md-auto text-dark text-decoration-none">
+                    <img src="{{ static_path }}/logo.png" alt="m2m service logo" class="d-none d-sm-block"/>
+                    <span class="fs-4 d-none d-sm-block">M2M Service</span>
+                    <!-- mobile logo -->
+                    <img src="{{ static_path }}/logo.png" alt="m2m service logo" class="d-block d-sm-none"/>
+                    <span class="d-block d-sm-none display-3">M2M Service</span>
+                </a>
+            </header>
+            <form class="form-signin" method="POST" action="{{ action }}">
+                <h1 class="h3 mb-3 fw-normal">Sign up</h1>
+                {% if message is defined %}
+                    {% if message_type == 'error' %}
+                        <div class="alert alert-warning text-center"><i class="mdi mdi-alert-rhombus"></i> {{ message }}</div>
+                    {% endif %}
+                {% endif %}
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username" autofocus required>
+                    <label for="floatingInput">Username</label>
+                </div>
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="email" required>
+                    <label for="floatingInput">Email</label>
+                </div>
+                <div class="form-floating">
+                    <input type="tel" class="form-control" id="floatingInput" placeholder="Phone" name="phone" required>
+                    <label for="floatingInput">Phone</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up <i class="mdi mdi-arrow-right"></i></button>
+            </form>
+            <p class="text-center">Have an account already? <a class="text-decoration-none" href="{{ path_for('login') }}"><i class="mdi mdi-login"></i> Sign In</a></p>
+            <footer class="pt-3 mt-4 text-muted border-top text-justify">
+                &copy; 2021-22 Team 21-3110-AS (Artem B., Alex G., Dominic H.) for CTEC3110
+            </footer>
+        </div>
+    </main>
+    </body>
+{% endblock %}

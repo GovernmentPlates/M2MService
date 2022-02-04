@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='shortcut icon' type='image/x-icon' href="{{ static_path }}/favicon.ico">
+    <!-- Meta Tags -->
+    <meta name="description" content="M2M Service">
+    <meta name="author" content="Artem Bobrov, Alex Grosvenor, Dominic Hollis">
+    <meta name="theme-color" content="#ffffff">
+    <title>{{ title }} - M2M Service</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ css_path }}/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.4.95/css/materialdesignicons.min.css">
+    <!-- Sign In Page Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ css_path }}/sign-in.css">
+</head>
+<!-- main content -->
+{% block main %}
+{% endblock %}
+<!-- /main content -->
+<!-- import jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- Bootstrap Bundle with Popper -->
+<script src="{{ js_path }}/bootstrap.bundle.min.js"></script>
+<!-- Loader JS -->
+<script src="{{ js_path }}/loader.js"></script>
+<script src="{{ js_path }}/legalWarning.js"></script>
+
+</html>

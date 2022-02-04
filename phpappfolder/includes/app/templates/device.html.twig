@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+<!-- main content -->
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-4 d-none d-sm-block">Device Status</h1>
+        <h1 class="display-4 d-block d-sm-none text-center">Device Status</h1>
+        <p class="lead d-none d-sm-block">View the latest status information about your connected device.</p>
+        <h5 class="lead d-block d-sm-none text-center">View the latest status information about your connected device.</h5>
+    </div>
+</div>
+<div class="container">
+    <h2 class="text-center">Status Overview {% if admin %}<a href="javascript:window.location.reload(true)" class="text-decoration-none text-dark" data-bs-toggle="tooltip" data-bs-placement="right" title="Refresh statuses (reload)"><i class="mdi mdi-refresh"></i></a>{% else %}<i class="mdi mdi-refresh text-muted" data-bs-toggle="tooltip" data-bs-placement="right" title="Admin permissions are required to refresh the device statuses" style="cursor: not-allowed;"></i>{% endif %}</h2>
+    <h5 class="text-muted text-center"><i class="mdi mdi-clock"></i> Data last updated: {{ deviceLastUpdate }}</h5>
+    <div class="row pt-3">
+        <div class="col-md-6">
+            <h3>Switches Configuration Status</h3>
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="d-none d-sm-block">
+                        <h2 class="display-6 text-center">{{ switch1 }}</h2>
+                        <h4 class="text-muted text-center"><i class="mdi mdi-toggle-switch-outline"></i> Switch 1</h4>
+                        <h2 class="display-6 text-center">{{ switch2 }}</h2>
+                        <h4 class="text-muted text-center"><i class="mdi mdi-toggle-switch-outline"></i> Switch 2</h4>
+                        <h2 class="display-6 text-center">{{ switch3 }}</h2>
+                        <h4 class="text-muted text-center"><i class="mdi mdi-toggle-switch-outline"></i> Switch 3</h4>
+                        <h2 class="display-6 text-center">{{ switch4 }}</h2>
+                        <h4 class="text-muted text-center"><i class="mdi mdi-toggle-switch-outline"></i> Switch 4</h4>
+                    </div>
+                    <!-- mobile only section -->
+                    <div class="d-block d-sm-none">
+                        <h2 class="display-2 text-center pt-3">{{ switch1 }}</h2>
+                        <h4 class="text-muted text-center"><i class="mdi mdi-toggle-switch-outline"></i> Switch 1</h4>
+                    </div>
+                    <div class="d-block d-sm-none">
+                        <h2 class="display-2 text-center pt-3">{{ switch2 }}</h2>
+                        <h4 class="text-muted text-center"><i class="mdi mdi-toggle-switch-outline"></i> Switch 2</h4>
+                    </div>
+                    <div class="d-block d-sm-none">
+                        <h2 class="display-2 text-center pt-3">{{ switch3 }}</h2>
+                        <h4 class="text-muted text-center"><i class="mdi mdi-toggle-switch-outline"></i> Switch 3</h4>
+                    </div>
+                    <div class="d-block d-sm-none">
+                        <h2 class="display-2 text-center pt-3">{{ switch4 }}</h2>
+                        <h4 class="text-muted text-center"><i class="mdi mdi-toggle-switch-outline"></i> Switch 4</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>Fan Status</h3>
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="d-none d-sm-block">
+                        <h2 class="display-5 text-center pt-4">{{ deviceFanConfig }}</h2>
+                        <h4 class="text-muted text-center pb-4"><i class="mdi mdi-fan"></i> Fan Configuration {% if deviceFanStatus == 'On' %}<span class="badge rounded-pill bg-success">ON</span>{% else %}<span class="badge rounded-pill bg-danger">OFF</span>{% endif %}</h4>
+                    </div>
+                    <!-- mobile only section -->
+                    <div class="d-block d-sm-none">
+                        <h2 class="display-2 text-center pt-4">{{ deviceFanConfig }}</h2>
+                        <h3 class="text-muted text-center pb-4"><i class="mdi mdi-fan"></i> Fan Configuration</h3>
+                    </div>
+                </div>
+            </div>
+            <h3 class="pt-2">Keypad Status</h3>
+            <div class="d-none d-sm-block">
+                <div class="card card-keypad-status">
+                    <div class="card-body text-center">
+                        <h2 class="display-5 text-center pt-4">{{ deviceLastKeypadInput }}</h2>
+                        <h4 class="text-muted text-center pb-4"><i class="mdi mdi-dialpad"></i> Last Digit Entered</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block d-sm-none">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h2 class="display-2 text-center pt-4">{{ deviceLastKeypadInput }}</h2>
+                        <h3 class="text-muted text-center pb-4"><i class="mdi mdi-dialpad"></i> Last Digit Entered</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+        <h2 class="text-center pt-4">Device Temperature Overview</h2>
+        <div class="row pt-3">
+          <div class="col-md-8">
+            <h3>Device temperature over time</h3>
+            <div id="device-temp">
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h3>Current device temperature</h3>
+            <div class="d-none d-sm-block">
+              <div class="card card-device-temp">
+                <div class="card-body text-center card-device-temp-lh">
+                  <h2 class="display-1 text-center pt-4">{{ deviceTemp }}&deg;C</h2>
+                  <h3 class="text-muted text-center pb-4"><i class="mdi mdi-thermometer"></i> Device Temperature</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-block d-sm-none">
+              <div class="card">
+                <div class="card-body">
+                  <h2 class="display-1 text-center pt-4">{{ deviceTemp }}&deg;C</h2>
+                  <h3 class="text-muted text-center pb-4"><i class="mdi mdi-thermometer"></i> Device Temperature</h3>
+                </div>
+              </div>
+            </div>
+
+        </div>
+<!-- /main content -->
+</main>
+
+{% endblock %}
+
+{% block graph_js %}
+    let options={chart:{height:380,type:"line",foreColor:"#6D6D6D"},series:[{name:"Temperature (°C)",data:[{% for temp in deviceGraph_Temp %} {{ temp }}, {% endfor %}]}],fill:{type:"gradient",gradient:{type:"vertical",shadeIntensity:1,opacityFrom:1,opacityTo:1,colorStops:[{offset:10,color:"#fc440b",opacity:1},{offset:55,color:"#ffce63",opacity:1},{offset:90,color:"#0a95f9",opacity:1}]}},stroke:{curve:"smooth"},yaxis:{min:0,max:45},xaxis:{type:"category",tickAmount:8,categories:[{% for date in deviceGraph_DateTime %} ['{{ date }}'], {% endfor %}],labels:{show:!0}}},chart=new ApexCharts(document.querySelector("#device-temp"),options);chart.render();
+{% endblock %}

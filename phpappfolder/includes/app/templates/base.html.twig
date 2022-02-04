@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }} - M2M Service</title>
+    <link rel='shortcut icon' type='image/x-icon' href="{{ static_path }}/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="M2M Service">
+    <meta name="theme-color" content="#FFFFFF">
+    <meta property="og:title" content="M2M Service">
+    <meta property="og:site_name" content="M2M Service">
+    <meta property="og:url" content="http://php.tech.dmu.ac.uk:6789/p2533140">
+    <meta property="og:description" content="M2M Service by Artem Bobrov, Alex Grosvenor, Dominic Hollis">
+    <meta property="og:image" content="static/favicon.ico">
+    <meta property="og:type" content="website">
+
+    <!-- Apple touch icons -->
+    <link rel="apple-touch-icon" href="{{ static_path }}/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ static_path }}/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ static_path }}/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ static_path }}/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ static_path }}/apple-touch-icon-152x152.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ css_path }}/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap component polyfill (Boostrap v4 -> v5) -->
+    <link href="{{ css_path }}/polyfill.css" rel="stylesheet">
+    <!-- Other CSS definitions -->
+    <link href="{{ css_path }}/master.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.4.95/css/materialdesignicons.min.css">
+    <!-- Custom styles for this template -->
+    <link href="{{ css_path }}/offcanvas.css" rel="stylesheet">
+    <!-- Apex Charts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body class="bg-light">
+<div id="loader" class="loader-center"></div>
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" aria-label="Main navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ path_for('dashboard') }}"><img src="{{ static_path }}/apple-touch-icon.png" alt="M2M Service Logo" class="navbar-logo"/> M2M Service</a>
+        <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path_for('dashboard') }}">Dashboard Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path_for('device') }}">Device Status</a>
+                </li>
+                {% if admin %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                        <li><a class="dropdown-item" href="{{ path_for('admin-log') }}">View Logs</a></li>
+                    </ul>
+                </li>
+                {% endif %}
+            </ul>
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="mdi mdi-clock-outline"></i> <span id="clock"></span></a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-account"></i> My Account</a>
+                        <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{{ path_for('settings') }}">Settings</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path_for('logout') }}"><i class="mdi mdi-logout"></i> Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<noscript>
+    <div class="alert alert-warning fixed-top" role="alert"><i class="mdi mdi-alert-rhombus"></i> <b>Please enable JavaScript</b> For this website to work correctly, you must enable JavaScript on your browser. <a href="https://www.enable-javascript.com/">Learn more &raquo;</a></div>
+</noscript>
+<!-- main content -->
+{% block main %}
+{% endblock %}
+<!-- /main content -->
+<!-- global footer -->
+<footer class="bd-footer py-3 mt-3 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 mb-3">
+                <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Bootstrap">
+                    <img src="{{ static_path }}/logo.png" class="logo-footer"/><span class="fs-5">M2M Service</span>
+                </a>
+                <ul class="list-unstyled small text-muted">
+                    <li class="mb-2">Created by Team 21-3110-AS for CTEC3110 Secure Web Application Development.</li>
+                    <li class="mb-2">&copy; 2021-22 Artem Bobrov, Alex Grosvenor, Dominic Hollis.</li>
+                    <li class="mb-2">Currently v1.0.0</li>
+                </ul>
+            </div>
+        </div>
+</footer>
+<!-- /global footer -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="{{ js_path }}/bootstrap.bundle.min.js"></script>
+<script src="{{ js_path }}/offcanvas.js"></script>
+<script src="{{ js_path }}/logFilter.js"></script>
+<script src="{{ js_path }}/bsfuncs.js"></script>
+<script src="{{ js_path }}/loader.js"></script>
+<script src="{{ js_path }}/clock.js"></script>
+<script>
+{% block graph_js %}
+{% endblock %}
+</script>
+</body>
+</html>

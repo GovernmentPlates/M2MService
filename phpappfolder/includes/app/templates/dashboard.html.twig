@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <!-- main content -->
+    <div class="jumbotron-home">
+        <div class="container">
+            <h1 class="display-4 d-none d-sm-block">Welcome back, {{ username }}.</h1>
+            <h1 class="display-4 d-block d-sm-none text-center">Welcome back, {{ username }}.</h1>
+            <p class="lead d-none d-sm-block">This service lets you view the status of your connected device.</p>
+            <h5 class="lead d-block d-sm-none text-center">This service lets you view the status of your connected device.</h5>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Device Summary</h2>
+                <h6 class="text-muted">Last updated: {{ deviceLastUpdate }}</h6>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="d-none d-sm-block">
+                            <h2 class="display-6 text-center">{{ deviceFanConfig }}</h2>
+                            <h4 class="text-muted text-center"><i class="mdi mdi-fan"></i> Fan Status {% if deviceFanStatus == 'On' %}<span class="badge rounded-pill bg-success">ON</span>{% else %}<span class="badge rounded-pill bg-danger">OFF</span>{% endif %}</h4>
+                            <h2 class="display-6 text-center">{{ deviceTemp }} &deg;C</h2>
+                            <h4 class="text-muted text-center"><i class="mdi mdi-thermometer"></i> Current Device Temperature</h4>
+                            <h2 class="display-6 text-center">{{ deviceLastKeypadInput }}</h2>
+                            <h4 class="text-muted text-center"><i class="mdi mdi-dialpad"></i> Last Keypad Value</h4>
+                        </div>
+                        <!-- mobile only section -->
+                        <div class="d-block d-sm-none">
+                            <h2 class="display-2 text-center pt-3">{{ deviceFanConfig }}</h2>
+                            <h4 class="text-muted text-center"><i class="mdi mdi-fan"></i> Fan Status {% if deviceFanStatus == 'On' %}<span class="badge rounded-pill bg-success">ON</span>{% else %}<span class="badge rounded-pill bg-danger">OFF</span>{% endif %}</h4>
+                        </div>
+                        <div class="d-block d-sm-none">
+                            <h2 class="display-2 text-center pt-3">{{ deviceTemp }}&deg;C</h2>
+                            <h4 class="text-muted text-center"><i class="mdi mdi-thermometer"></i> Current Device Temperature</h4>
+                        </div>
+                        <div class="d-block d-sm-none">
+                            <h2 class="display-2 text-center pt-3">{{ deviceLastKeypadInput }}</h2>
+                            <h4 class="text-muted text-center"><i class="mdi mdi-dialpad"></i> Last Keypad Value</h4>
+                        </div>
+                    </div>
+                </div>
+                <p class="pt-3"><a class="btn btn-primary" href="{{ path_for('device') }}" role="button">View full status &raquo;</a></p>
+            </div>
+            <div class="col-md-6">
+                <h2>Device Temperature</h2>
+                <h6 class="text-muted">Device temperature (&deg;C) readings over time.</h6>
+                <div id="device-temp"></div>
+            </div>
+        </div>
+    </div>
+    <!-- /main content -->
+    </main>
+{% endblock %}
+
+{% block graph_js %}
+    let options={chart:{height:380,type:"line",foreColor:"#6D6D6D"},series:[{name:"Temperature (°C)",data:[{% for temp in deviceGraph_Temp %} {{ temp }}, {% endfor %}]}],fill:{type:"gradient",gradient:{type:"vertical",shadeIntensity:1,opacityFrom:1,opacityTo:1,colorStops:[{offset:10,color:"#fc440b",opacity:1},{offset:55,color:"#ffce63",opacity:1},{offset:90,color:"#0a95f9",opacity:1}]}},stroke:{curve:"smooth"},yaxis:{min:0,max:45},xaxis:{type:"category",tickAmount:8,categories:[{% for date in deviceGraph_DateTime %} ['{{ date }}'], {% endfor %}],labels:{show:!0}}},chart=new ApexCharts(document.querySelector("#device-temp"),options);chart.render();
+{% endblock %}

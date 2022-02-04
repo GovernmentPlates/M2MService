@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <!-- main content -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4 d-none d-sm-block">Account Settings</h1>
+            <h1 class="display-4 d-block d-sm-none text-center">Account Settings</h1>
+            <p class="lead d-none d-sm-block">Modify your account settings on the M2M Service.</p>
+            <h5 class="lead d-block d-sm-none text-center">Modify your account settings on the M2M Service.</h5>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% if password_change_status is defined %}
+                {%  if password_change_status %}
+                    <div class="alert alert-success"><i class="mdi mdi-check"></i> Your password has been changed.</div>
+                {% else %}
+                    <div class="alert alert-warning"><i class="mdi mdi-alert-rhombus-outline"></i> Something is wrong: your password does not match our records - please check your passwords.</div>
+                {% endif %}
+            {% endif %}
+            <div class="col-md-6">
+                <h2>Account Details</h2>
+                <div class="d-none d-sm-block">
+                <div class="card">
+                    <div class="card-body card-acc-details text-center">
+                        <h2 class="display-6 text-center">{{ username }} {% if admin %}<i class="mdi mdi-shield-star-outline" data-bs-toggle="tooltip" data-bs-placement="right" title="Administrator"></i>{% endif %}</h2>
+                            <h4 class="text-muted text-center"><i class="mdi mdi-account"></i> Username</h4>
+                            <h2 class="display-6 text-center">{{ email }}</h2>
+                            <h4 class="text-muted text-center"><i class="mdi mdi-email"></i> E-mail address</h4>
+                            <h2 class="display-6 text-center">{{ phone }}</h2>
+                            <h4 class="text-muted text-center"><i class="mdi mdi-phone"></i> Phone Number</h4>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-block d-sm-none">
+                    <div class="card">
+                      <div class="card-body text-center">
+                          <h2><b>{{ username }} {% if admin %}<i class="mdi mdi-shield-star-outline" data-bs-toggle="tooltip" data-bs-placement="right" title="Administrator"></i>{% endif %}</b></h2>
+                            <h4><i class="mdi mdi-account"></i> Username</h4>
+                            <h2><b>{{ email }}</b></h2>
+                            <h4><i class="mdi mdi-email"></i> E-mail address</h4>
+                            <h2><b>{{ phone }}</b></h2>
+                            <h4><i class="mdi mdi-phone"></i> Phone Number</h4>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <h2>Change Account Password</h2>
+                <div class="card">
+                    <div class="card-body text-center card-reset-pass-lh">
+                        <form method="POST" action="{{ action }}">
+                            <div class="mb-3">
+                                <label for="passwordInputCurrent" class="form-label">Current Password</label>
+                                <input type="password" class="form-control" name="currentPassword" id="passwordInputCurrent" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="passwordInputNew" class="form-label">New Password</label>
+                                <input type="password" class="form-control" name="newPassword" id="passwordInputNew">
+                            </div>
+                            <div class="mb-3">
+                                <label for="passwordInputConfirm" class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" name="confirmNewPassword" id="passwordInputConfirm">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Change Password <i class="mdi mdi-key"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /main content -->
+        </main>
+{% endblock %}

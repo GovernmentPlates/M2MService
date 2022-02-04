@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <!-- main content -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4 d-none d-sm-block">Log Viewer</h1>
+            <h1 class="display-4 d-block d-sm-none text-center">Log Viewer</h1>
+            <p class="lead d-none d-sm-block">View stored application logs on the M2M Service.</p>
+            <h5 class="lead d-block d-sm-none text-center">View stored application logs on the M2M Service.</h5>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="text-center">M2M Application Log <a href="javascript:window.location.reload(true)" class="text-decoration-none text-dark" data-bs-toggle="tooltip" data-bs-placement="right" title="Update logs (reload)"><i class="mdi mdi-refresh"></i></a></h2>
+        <div class="row pt-3">
+    <div class="col-md-12">
+        <div class="input-group stylish-input-group">
+            <input type="text" class="Input search form-control" placeholder="Search">
+            <span class="input-group-addon"></span>
+        </div>
+        <br />
+        <table class="table table-hover results table-inverse table-responsive">
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Level</th>
+                    <th>Log Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in log_entry %}
+                    <tr>
+                        <td>{{ log.date|date('D d/m/Y H:i:s') }}</td>
+                        <td>{{ log.logType }}</td>
+                        <td>{{ log.logMsg }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!-- /main content -->
+    </main>
+
+{% endblock %}
