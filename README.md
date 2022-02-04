@@ -35,3 +35,6 @@ This web application predominantly uses PHP as well as a PHP micro-framework cal
 - Alex Grosvenor
 
 ## Screenshots
+![Home](home.jpg)
+![Status](status.jpg)
+![Settings](settings.jpg)
