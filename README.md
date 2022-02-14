@@ -29,6 +29,16 @@ The web application interacts with this online service via SOAP (Simple Object A
 ## Web Application
 This web application predominantly uses PHP as well as a PHP micro-framework called 'Slim' for MVC. In addition to this, the application uses SQL (database), PHPUnit (application testing), Twig (templates) and front-end components (Boostrap, ApexCharts).
 
+## Features Implemented
+- User authentication/functions (login, register, sessions, password change etc.)
+- Message parsing/processing, validation
+- Device status monitor
+- SMS notifications on message processing (message acknowledgement)
+- Temperature graphs
+- Application logging
+- 2 Factor Authentication/Security via SMS
+- *And more...*
+
 ## Authors
 - Dominic Hollis
 - Artem Bobrov
