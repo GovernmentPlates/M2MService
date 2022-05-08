@@ -48,3 +48,4 @@ This web application predominantly uses PHP as well as a PHP micro-framework cal
 ![Home](home.jpg)
 ![Status](status.jpg)
 ![Settings](settings.jpg)
+![2FA](2fa.jpg)
