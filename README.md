@@ -27,7 +27,7 @@ The M2M Connect platform is an online service provided by EE (part of BT Group) 
 The web application interacts with this online service via SOAP (Simple Object Access Protocol) - using the PHP SoapClient library.
 
 ## Web Application
-This web application predominantly uses PHP as well as a PHP micro-framework called 'Slim' for MVC. In addition to this, the application uses SQL (database), PHPUnit (application testing), Twig (templates) and front-end components (Boostrap, ApexCharts).
+This web application predominantly uses PHP as well as a PHP micro-framework called 'Slim' for MVC. In addition to this, the application uses SQL (database), PHPUnit (application testing), Twig (templates) and front-end components (Bootstrap, ApexCharts).
 
 ## Features Implemented
 - User authentication/functions (login, register, sessions, password change etc.)
