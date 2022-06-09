@@ -25,7 +25,7 @@ class TwoFactorProcessor
 {
     public function __construct() {}
 
-    public function destruct() {}
+    public function __destruct() {}
 
     /*
      * Function to generate a one-time 2FA code (consists of a random 6 character value)
