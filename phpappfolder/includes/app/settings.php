@@ -1,9 +1,9 @@
 <?php
 
 /*
- * DBInterface.php
+ * settings.php
  *
- * Class to interact with the MariaDB server
+ * General app related settings
  *
  * Author: Dominic Hollis, Artem Bobrov
  * Email: <p2533140@my365.dmu.ac.uk> <p2547788@my365.dmu.ac.uk>
